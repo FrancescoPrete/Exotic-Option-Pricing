@@ -50,8 +50,8 @@ Under this assumption, the structural parameters of the variance process ($\alph
 
 $$
 \begin{cases} 
-dS_t = r S_t dt + \sqrt{\,v_t^{\vphantom{2}}\,} \, S_t \, dz_t^{1,\mathbb{Q}} \\ 
-dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{\,v_t^{\vphantom{2}}\,} \, dz_t^{2,\mathbb{Q}} 
+dS_t = r S_t dt + \sqrt{\,v_t\,} \, S_t \, dz_t^{1,\mathbb{Q}} \\ 
+dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{\,v_t\,} \, dz_t^{2,\mathbb{Q}} 
 \end{cases}
 $$
 
