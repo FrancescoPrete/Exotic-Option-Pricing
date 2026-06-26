@@ -7,3 +7,12 @@ An open-source quantitative framework for exotic options pricing (Monte Carlo &a
   * Vectorized Monte Carlo simulation
   * Finite Differences to solve the pricing PDEs.
 * **Exotic payoffs supported:** Asian (arithmetic and geometric average), barrier and binary options.
+
+## Mathematical framework
+
+### The benchmark for the options pricing: Black-Scholes model
+The asset price $S_t$ is first modeled under standard geometrical Brownian motion with constant volatility $\sigma$:
+
+$$dS_t= \mu S_t+ \sigma dW_t$$
+
+While computationally efficient for path-dependent exotic options under constant $\sigma$ assumption, this limitation fails to capture the empirical volatility smile observed in live option chains. 
