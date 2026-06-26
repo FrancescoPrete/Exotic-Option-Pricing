@@ -85,7 +85,7 @@ Where the asset shock $\epsilon_t^1 \sim \mathcal{N}(0,1)$ is correlated to the 
 $$\epsilon_t^1 = Z_t^1$$
 $$\epsilon_t^2 = \rho Z_t^1 + \sqrt{1 - \rho^2} Z_t^2$$
 
-With $$\epsilon_t^2 is obtained via Cholesky factorization and $Z_t^1, Z_t^2 \stackrel{iid}{\sim} \mathcal{N}(0,1)$.
+Where $\epsilon_t^2 is obtained via Cholesky factorization and $Z_t^1, Z_t^2 \stackrel{iid}{\sim} \mathcal{N}(0,1)$.
 
 #### Monte Carlo Estimator for Exotic Payoffs
 The fair price of a path-dependent exotic option with an arbitrary payoff function $\varphi(\{S_t\}_{t=0}^n)$ is evaluated via the risk-neutral discounted sample average across all simulated paths:
