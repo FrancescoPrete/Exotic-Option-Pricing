@@ -64,7 +64,7 @@ Where $d\langle z^{1,\mathbb{Q}}, z^{2,\mathbb{Q}} \rangle_t = \rho dt$, with $\
 To implement the pricing engine in Python, the continuous risk-neutral SDEs are discretized. This framework utilizes two distinct numerical paradigms: **Path Simulation (Monte Carlo)** and **Grid Discretization (Finite Differences)**.
 
 ### 1. Vectorized Monte Carlo Simulation
-Under Monte Carlo pricing, the expected payoff is computed by simulating $num\_paths$ independent asset trajectories over a discrete time grid $0 = t_0 < t_1 < \dots < t_n = T$ with a constant time step $\Delta t = T/n$.
+Under Monte Carlo pricing, the expected payoff is computed by simulating independent asset trajectories over a discrete time grid $0 = t_0 < t_1 < \dots < t_n = T$ with a constant time step $\Delta t = T/n$.
 
 The simulation is **fully vectorized across all paths** to leverage NumPy's low-level optimizations, executing the spatial updates simultaneously at each temporal step $t$.
 
