@@ -42,7 +42,7 @@ $$ d\langle z^1, z^2 \rangle_t = \rho dt $$
 
 To price exotic options using Monte Carlo simulations or Finite Difference Methods, the system must be modeled under the risk-neutral measure $\mathbb{Q}$. By invoking **Girsanov's Theorem**, the drift of the underlying asset is shifted from $\bar{\mu}$ to the risk-free interest rate $r$. 
 
-Since volatility is not a traded asset, the market is incomplete, requiring the definition of the market price of volatility risk, $q(S_t, v_t, t)$. To maintain mathematical parsimony and focus on numerical engine efficiency, we assume the market price of volatility risk to be zero:
+Since volatility is not a traded asset, the market is incomplete, requiring the definition of the market price of volatility risk, $q(S_t, v_t, t)$. To maintain mathematical parsimony we assume the market price of volatility risk to be zero:
 
 $$q(S_t, v_t, t) = 0$$
 
