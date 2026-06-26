@@ -23,9 +23,17 @@ To resolve the previous limitation of a constant sigma, we use the Heston model,
 
 $$
 \begin{cases} 
-dS_t = \bar{\mu} S_t dt + \sqrt{\,v_t^{\vphantom{2}}\,} \, S_t \, dz_t^1 \\ 
-dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{\,v_t^{\vphantom{2}}\,} \, dz_t^2 
+dS_t = \bar{\mu} S_t dt + \sqrt{v_t} S_t dz_t^1 \\ 
+dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{v_t} dz_t^2 
 \end{cases}
 $$
 With instantaneous correlation defined by:
 $$ d\langle z^1, z^2 \rangle_t = \rho dt $$
+
+### Parameter Definitions
+* **Asset Price Dynamics ($S_t$):** Governed by the drift $\bar{\mu}$ under the physical measure $\mathbb{P}$.
+* **Variance Process ($v_t$):** Follows a mean-reverting square-root process (Cox-Ingersoll-Ross type dynamics).
+* **Mean-Reversion Speed ($\alpha$):** Determines how fast the variance returns to its long-term mean.
+* **Long-Term Variance ($\gamma$):** The baseline level towards which the variance process drifts.
+* **Volatility of Volatility ($\sigma$):** Represents the instantaneous standard deviation coefficient of the variance process.
+* **Correlation ($\rho$):** Captures the leverage effect, where $d\langle z^1, z^2 \rangle_t = \rho dt$.
