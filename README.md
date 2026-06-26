@@ -23,8 +23,8 @@ To resolve the previous limitation of a constant sigma, we use the Heston model,
 
 $$
 \begin{cases} 
-dS_t = \bar{\mu} S_t dt + \sqrt{v_t} S_t dz_t^1 \\ 
-dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{v_t} dz_t^2 
+dS_t = \bar{\mu} S_t dt + \sqrt{\,v_t^{\vphantom{2}}\,} \, S_t \, dz_t^1 \\ 
+dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{\,v_t^{\vphantom{2}}\,} \, dz_t^2 
 \end{cases}
 $$
 With instantaneous correlation defined by:
