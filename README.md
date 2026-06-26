@@ -17,3 +17,15 @@ $$dS_t= \mu S_t+ \sigma dW_t$$
 
 While computationally efficient for path-dependent exotic options under constant $\sigma$ assumption, this limitation fails to capture the empirical volatility smile observed in live option chains. 
 <img width="3344" height="1768" alt="Implied volatility" src="https://github.com/user-attachments/assets/d4509184-d6c6-4c0f-8480-e4e6e12769b3" />
+
+### The Heston stochastic volatility model
+To resolve the previous limitation of a constant sigma, we use the Heston model, where the joint dynamics of asset price $S_t$ and its instantaneous variance $V_t$ are governed by the following SDEs:
+
+$$
+\begin{cases} 
+dS_t = \bar{\mu} S_t dt + \sqrt{v_t} S_t dz_t^1 \\ 
+dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{v_t} dz_t^2 
+\end{cases}
+$$
+Con correlazione istantanea definita da:
+$$ d\langle z^1, z^2 \rangle_t = \rho dt $$
