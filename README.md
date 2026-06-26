@@ -37,3 +37,16 @@ $$ d\langle z^1, z^2 \rangle_t = \rho dt $$
 * **Long-Term Variance ($\gamma$):** The baseline level towards which the variance process drifts.
 * **Volatility of Volatility ($\sigma$):** Represents the instantaneous standard deviation coefficient of the variance process.
 * **Correlation ($\rho$):** Captures the leverage effect, where $d\langle z^1, z^2 \rangle_t = \rho dt$.
+
+### The Role of Girsanov's Theorem in Asset Pricing
+
+To transition from the physical measure $\mathbb{P}$ to an equivalent martingale measure $\mathbb{Q}$, we invoke **Girsanov's Theorem**. Since the Heston model features two coupled Brownian motions ($z_t^1, z_t^2$), we define a two-dimensional market price of risk vector:
+
+$$ \mathbf{\Lambda}_t = \begin{bmatrix} q_1(S_t, v_t, t) \\ q_2(S_t, v_t, t) \end{bmatrix} $$
+
+Where $q_1$ is dictated by the market risk premium of the underlying asset to eliminate arbitrage ($q_1 = \frac{\bar{\mu} - r}{\sqrt{v_t}}$), and $q_2(S_t, v_t, t) = q(S_t, v_t, t)$ represents the independent market price of volatility risk. 
+
+By Girsanov's theorem, the transformed processes defined below are standard Brownian motions under $\mathbb{Q}$:
+
+$$ dz_t^{1,\mathbb{Q}} = dz_t^1 + q_1(S_t, v_t, t)dt $$
+$$ dz_t^{2,\mathbb{Q}} = dz_t^2 + q(S_t, v_t, t)dt $$
