@@ -59,7 +59,7 @@ Where $d\langle z^{1,\mathbb{Q}}, z^{2,\mathbb{Q}} \rangle_t = \rho dt$, with $\
 
 ---
 
-## 🔬 Numerical Methods Framework
+## Numerical Methods Framework
 
 To implement the pricing engine in Python, the continuous risk-neutral SDEs are discretized. This framework utilizes two distinct numerical paradigms: **Path Simulation (Monte Carlo)** and **Grid Discretization (Finite Differences)**.
 
