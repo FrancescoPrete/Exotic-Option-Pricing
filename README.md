@@ -1,4 +1,3 @@
-<img width="2744" height="1568" alt="Implied volatility" src="https://github.com/user-attachments/assets/47f56641-d54b-4a02-86bd-148782a4e21a" />
 # Exotic-Option-Pricing
 An open-source quantitative framework for exotic options pricing (Monte Carlo &amp; Finite Differences). Project under expansion to incorporate stochastic volatility models.
 ## Key features
