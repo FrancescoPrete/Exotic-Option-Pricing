@@ -88,18 +88,8 @@ $$\epsilon_t^2 = \rho Z_t^1 + \sqrt{1 - \rho^2} Z_t^2$$
 With $Z_t^1, Z_t^2 \stackrel{iid}{\sim} \mathcal{N}(0,1)$.
 
 #### Monte Carlo Estimator for Exotic Payoffs
-The fair price of a path-dependent exotic option with an arbitrary payoff function $\Phi(\{S_t\}_{t=0}^n)$ is evaluated via the risk-neutral discounted sample average across all simulated paths:
+The fair price of a path-dependent exotic option with an arbitrary payoff function $\varphi(\{S_t\}_{t=0}^n)$ is evaluated via the risk-neutral discounted sample average across all simulated paths:
 
-$$\hat{C}_0 = e^{-rT} \frac{1}{num\_paths} \sum_{i=1}^{num\_paths} \Phi\left( \{S_t^{(i)}\}_{t=0}^n \right)$$
+$$\hat{C}_0 = e^{-rT} \frac{1}{num\_paths} \sum_{i=1}^{num\_paths} \varphi\left( \{S_t^{(i)}\}_{t=0}^n \right)$$
 
 ---
-
-### 2. Finite Difference Method (PDE Approach)
-By the Feynman-Kac theorem, the pricing function $U(S, v, t)$ for any derivative under the risk-neutral Heston dynamics satisfies the following 2D partial differential equation (PDE):
-
-$$\frac{\partial U}{\partial t} + rS \frac{\partial U}{\partial S} + \alpha(\gamma - v) \frac{\partial U}{\partial v} + \frac{1}{2} v S^2 \frac{\partial^2 U}{\partial S^2} + \rho \sigma v S \frac{\partial^2 U}{\partial S \partial v} + \frac{1}{2} \sigma^2 v \frac{\partial^2 U}{\partial v^2} - rU = 0$$
-
-#### Grid Discretization & ADI Schemes
-To solve this 2D PDE numerically, we define a localized spatial grid $(S, v) \in [0, S_{\max}] \times [0, v_{\max}]$. Due to the cross-derivative term $\frac{\partial^2 U}{\partial S \partial v}$ introduced by the correlation $\rho$, standard implicit methods become computationally expensive. 
-
-To maintain stability and speed, the engine implements an **Alternating Direction Implicit (ADI)** scheme (such as the Craig-Sneyd or Hundsdorfer-Verwer splitting method), breaking the 2D problem into successive 1D tridiagonal systems at each time step.
