@@ -1,3 +1,4 @@
+<img width="2744" height="1568" alt="Implied volatility" src="https://github.com/user-attachments/assets/47f56641-d54b-4a02-86bd-148782a4e21a" />
 # Exotic-Option-Pricing
 An open-source quantitative framework for exotic options pricing (Monte Carlo &amp; Finite Differences). Project under expansion to incorporate stochastic volatility models.
 ## Key features
@@ -16,3 +17,4 @@ The asset price $S_t$ is first modeled under standard geometrical Brownian motio
 $$dS_t= \mu S_t+ \sigma dW_t$$
 
 While computationally efficient for path-dependent exotic options under constant $\sigma$ assumption, this limitation fails to capture the empirical volatility smile observed in live option chains. 
+<img width="2744" height="1568" alt="Implied volatility" src="https://github.com/user-attachments/assets/d4509184-d6c6-4c0f-8480-e4e6e12769b3" />
