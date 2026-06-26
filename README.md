@@ -16,4 +16,4 @@ The asset price $S_t$ is first modeled under standard geometrical Brownian motio
 $$dS_t= \mu S_t+ \sigma dW_t$$
 
 While computationally efficient for path-dependent exotic options under constant $\sigma$ assumption, this limitation fails to capture the empirical volatility smile observed in live option chains. 
-<img width="3344" height="1368" alt="Implied volatility" src="https://github.com/user-attachments/assets/d4509184-d6c6-4c0f-8480-e4e6e12769b3" />
+<img width="3344" height="1768" alt="Implied volatility" src="https://github.com/user-attachments/assets/d4509184-d6c6-4c0f-8480-e4e6e12769b3" />
