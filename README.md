@@ -55,4 +55,4 @@ dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{\,v_t\,} \, dz_t^{2,\mathbb{Q}}
 \end{cases}
 $$
 
-Where $d\langle z^{1,\mathbb{Q}}, z^{2,\mathbb{Q}} \rangle_t = \rho dt$, with $\rho < 0$ to capture the empirical leverage effect where asset down-moves trigger volatility spikes.
+Where $d\langle z^{1,\mathbb{Q}}, z^{2,\mathbb{Q}} \rangle_t = \rho dt$, with $\rho < 0$ to capture the empirical leverage effect.
