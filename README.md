@@ -38,15 +38,21 @@ $$ d\langle z^1, z^2 \rangle_t = \rho dt $$
 * **Volatility of Volatility ($\sigma$):** Represents the instantaneous standard deviation coefficient of the variance process.
 * **Correlation ($\rho$):** Captures the leverage effect, where $d\langle z^1, z^2 \rangle_t = \rho dt$.
 
-### The Role of Girsanov's Theorem in Asset Pricing
+### Risk-Neutral Measure & Girsanov's Theorem ($\mathbb{P} \to \mathbb{Q}$)
 
-To transition from the physical measure $\mathbb{P}$ to an equivalent martingale measure $\mathbb{Q}$, we invoke **Girsanov's Theorem**. Since the Heston model features two coupled Brownian motions ($z_t^1, z_t^2$), we define a two-dimensional market price of risk vector:
+To price exotic options using Monte Carlo simulations or Finite Difference Methods, the system must be modeled under the risk-neutral measure $\mathbb{Q}$. By invoking **Girsanov's Theorem**, the drift of the underlying asset is shifted from $\bar{\mu}$ to the risk-free interest rate $r$. 
 
-$$ \mathbf{\Lambda}_t = \begin{bmatrix} q_1(S_t, v_t, t) \\ q_2(S_t, v_t, t) \end{bmatrix} $$
+Since volatility is not a traded asset, the market is incomplete, requiring the definition of the market price of volatility risk, $q(S_t, v_t, t)$. To maintain mathematical parsimony and focus on numerical engine efficiency, we assume the market price of volatility risk to be zero:
 
-Where $q_1$ is dictated by the market risk premium of the underlying asset to eliminate arbitrage ($q_1 = \frac{\bar{\mu} - r}{\sqrt{v_t}}$), and $q_2(S_t, v_t, t) = q(S_t, v_t, t)$ represents the independent market price of volatility risk. 
+$$q(S_t, v_t, t) = 0$$
 
-By Girsanov's theorem, the transformed processes defined below are standard Brownian motions under $\mathbb{Q}$:
+Under this assumption, the structural parameters of the variance process ($\alpha, \gamma, \sigma$) remain identical under both the physical measure $\mathbb{P}$ and the risk-neutral measure $\mathbb{Q}$. The resulting system under $\mathbb{Q}$ is formulated as:
 
-$$ dz_t^{1,\mathbb{Q}} = dz_t^1 + q_1(S_t, v_t, t)dt $$
-$$ dz_t^{2,\mathbb{Q}} = dz_t^2 + q(S_t, v_t, t)dt $$
+$$
+\begin{cases} 
+dS_t = r S_t dt + \sqrt{\,v_t^{\vphantom{2}}\,} \, S_t \, dz_t^{1,\mathbb{Q}} \\ 
+dv_t = \alpha(\gamma - v_t) dt + \sigma \sqrt{\,v_t^{\vphantom{2}}\,} \, dz_t^{2,\mathbb{Q}} 
+\end{cases}
+$$
+
+Where $d\langle z^{1,\mathbb{Q}}, z^{2,\mathbb{Q}} \rangle_t = \rho dt$, with $\rho < 0$ to capture the empirical leverage effect where asset down-moves trigger volatility spikes.
