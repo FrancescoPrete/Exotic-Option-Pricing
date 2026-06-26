@@ -4,6 +4,6 @@ An open-source quantitative framework for exotic options pricing (Monte Carlo &a
 
 * **Stochastic volatility integration:** Implementation of Heston model to capture the empirical volatility smile and leverage effects.
 * **Numerical pricing methods:**
- * Vectorized Monte Carlo simulation
- * Finite Differences to solve the pricing PDEs.
+  * Vectorized Monte Carlo simulation
+  * Finite Differences to solve the pricing PDEs.
 * **Exotic payoffs supported:**
