@@ -6,4 +6,4 @@ An open-source quantitative framework for exotic options pricing (Monte Carlo &a
 * **Numerical pricing methods:**
   * Vectorized Monte Carlo simulation
   * Finite Differences to solve the pricing PDEs.
-* **Exotic payoffs supported:** Asian, barrier and binary options
+* **Exotic payoffs supported:** Asian (arithmetic and geometric average), barrier and binary options.
